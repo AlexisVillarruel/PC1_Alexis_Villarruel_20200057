@@ -4,39 +4,31 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import dev.alexisvillarruel.logingpcparcial_reciclyeview.R
 import dev.alexisvillarruel.logingpcparcial_reciclyeview.databinding.FragmentSlideshowBinding
 
 class SlideshowFragment : Fragment() {
-
-    private var _binding: FragmentSlideshowBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        val slideshowViewModel =
-            ViewModelProvider(this).get(SlideshowViewModel::class.java)
-
-        _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textSlideshow
-        slideshowViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+    ): View? {
+        val view: View = inflater.inflate(R.layout.fragment_slideshow, container, false)
+        val km: TextView = view.findViewById(R.id.etkilometros)
+        val min: TextView = view.findViewById(R.id.etminutos)
+        val result : TextView = view.findViewById(R.id.msgcalculo)
+        val btnCalcular: Button = view.findViewById(R.id.btncalcular)
+        btnCalcular.setOnClickListener{
+            val kmText: String = km.text.toString()
+            val minText: String = min.text.toString()
+            result.text = (kmText.toFloat() / minText.toFloat()).toString() + " Km/min"
         }
-        return root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        return view
     }
 }
+

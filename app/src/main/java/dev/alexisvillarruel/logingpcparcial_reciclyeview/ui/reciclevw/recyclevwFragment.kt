@@ -1,6 +1,8 @@
 package dev.alexisvillarruel.logingpcparcial_reciclyeview.ui.reciclevw
 
 import android.content.Intent
+import android.icu.text.CaseMap.Title
+import android.icu.text.CaseMap.toTitle
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -22,6 +24,7 @@ class recyclevwFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
         val view = inflater.inflate(R.layout.fragment_recyclevw, container, false)
         val rvrecycle : RecyclerView = view.findViewById(R.id.rvRecycle)
         rvrecycle.layoutManager = LinearLayoutManager(requireContext())
@@ -33,6 +36,7 @@ class recyclevwFragment : Fragment() {
         }
         return view
     }
+
     private fun getItem(): List<exmModel>{
         val itemlist: ArrayList<exmModel> = ArrayList()
         itemlist.add(

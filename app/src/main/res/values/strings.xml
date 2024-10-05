@@ -16,4 +16,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="valTituloPlayer">PLAYERS</string>
     <string name="valbtntext">Volver Login</string>
+    <string name="txttitulorendimiento">Rendimiento</string>
+    <string name="valhint">Kilómetros recorridos</string>
+    <string name="hintmin">Minutos jugados</string>
+    <string name="valtextbtn">Calcular</string>
 </resources>
