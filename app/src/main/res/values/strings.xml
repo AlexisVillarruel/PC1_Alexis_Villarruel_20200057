@@ -20,4 +20,5 @@
     <string name="valhint">Kilómetros recorridos</string>
     <string name="hintmin">Minutos jugados</string>
     <string name="valtextbtn">Calcular</string>
+    <string name="txtequipos">EQUIPOS</string>
 </resources>
