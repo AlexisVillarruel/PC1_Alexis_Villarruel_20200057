@@ -16,6 +16,7 @@ class ItemAdapter(private var lstitem: List<exmModel>):
         val ivitem : ImageView   = itemView.findViewById(R.id.ivitem)
         val tvtittle : TextView  = itemView.findViewById(R.id.tvtittle)
         val tvdescripcion : TextView = itemView.findViewById(R.id.tvdescripcion)
+        val tvaño : TextView = itemView.findViewById(R.id.tvaño)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -31,5 +32,6 @@ class ItemAdapter(private var lstitem: List<exmModel>):
         holder.ivitem.setImageResource(item.image)
         holder.tvtittle.text = item.title
         holder.tvdescripcion.text = item.description
+        holder.tvaño.text = item.año.toString()
     }
 }
